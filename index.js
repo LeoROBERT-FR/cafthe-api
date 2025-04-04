@@ -7,7 +7,12 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerJsdoc = require("swagger-jsdoc");
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: 'cafthe.leo.robert.dev-campus.fr',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
 
 // Configuration de Swagger
 const swaggerOptions = {
