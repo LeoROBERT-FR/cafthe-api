@@ -2,6 +2,8 @@ const mysql = require('mysql2')
 
 require('dotenv').config() // permet de charger les variables d'environnement
 
+console.log(process.env)
+
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
