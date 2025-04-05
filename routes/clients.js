@@ -74,10 +74,28 @@ router.post('/login', (req, res) => {
                 return res.status(401).json({ message: "Mot de passe invalide" });
             }
 
+            // Générer le token
+            const token = sign(
+                {id: client.Id_Client, email: client.Mail_Client, adresse: client.Adresse_Livraison_Client},
+                process.env.JWT_SECRET,
+                {expiresIn: process.env.JWT_EXPIRES_IN}
+            )
+
             console.log("✅ Connexion réussie !");
-            res.json({ message: "Connexion réussie" });
+
+            // Renvoi du token et des données du client
+            res.json({
+                token, // Token à renvoyer
+                client: { // Données du client
+                    id: client.Id_Client,
+                    name: client.Nom_Client,
+                    email: client.Mail_Client,
+                    address: client.Adresse_Livraison_Client
+                }
+            });
         });
     });
 });
+
 
 module.exports = router;

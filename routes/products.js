@@ -17,7 +17,7 @@ router.get("/products", (req, res) => {
 
 // Récupérer un produit spécifique
 router.get('/products/:id', (req, res) => {
-    const query = 'SELECT * FROM products WHERE id = ?';
+    const query = 'SELECT * FROM produit WHERE Id_Produit = ?';
     db.query(query, [req.params.id], (err, result) => {
         if (err) {
             return res.status(500).send(err);
