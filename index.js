@@ -21,7 +21,7 @@ const swaggerOptions = {
         info: {
             title: "API CafThé Documentation",
             version: "1.0.0",
-            description: "Documentation de l'API CafThé avec Swagger",
+            description: "Documentation de l'API CafThé avec Swagger.",
         },
         servers: [
             {

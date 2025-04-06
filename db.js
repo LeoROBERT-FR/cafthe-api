@@ -13,11 +13,11 @@ const db = mysql.createConnection({
 
 db.connect((error => {
     if(error){
-        console.error("Erreur de connexion mysql :", error)
+        console.error("Erreur de connexion mysql : ", error)
         process.exit(1)
     }
 
-    console.log("Connecter a la ddb mysql")
+    console.log("Connecter a la ddb mysql. ")
 }))
 
 module.exports = db;

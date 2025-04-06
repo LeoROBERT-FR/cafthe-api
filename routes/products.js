@@ -5,11 +5,11 @@ const db = require('../db');
 router.get("/products", (req, res) => {
     let sqlQuery = `SELECT * FROM produit`;
 
-    console.log("Requête SQL exécutée :", sqlQuery);
+    console.log("Requête SQL exécutée : ", sqlQuery);
     db.query(sqlQuery, (err, result) => {
         if (err) {
-            console.error("Erreur SQL :", err);
-            return res.status(500).json({ message: "Erreur du serveur" });
+            console.error("Erreur SQL : ", err);
+            return res.status(500).json({ message: "Erreur du serveur. " });
         }
         res.json(result);
     });
